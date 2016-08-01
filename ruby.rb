@@ -51,6 +51,49 @@
 #
 # caller(1, method(:callback))
 
+# # callbacks with procs
+# is_even = Proc.new { |n|
+# 	n%2==0
+# }
+#
+# puts "is 2 even? #{is_even.call(2)}"
+# puts "is 3 even? #{is_even.call(3)}"
+#
+# nums = [2, 3]
+# puts "even nums from 2,3 #{nums.select(&is_even)}"
+# puts "even nums from 2,3 #{nums.select {|n| is_even.call(n)} }"
+
+# # callbacks with lambdas
+# is_even = lambda { |n|
+# 	n%2==0
+# }
+#
+# puts "is 2 even? #{is_even.call(2)}"
+# puts "is 3 even? #{is_even.call(3)}"
+#
+# nums = [2, 3]
+# puts "even nums from 2,3 #{nums.select(&is_even)}"
+# puts "even nums from 2,3 #{nums.select {|n| is_even.call(n)} }"
+
+# # difference between lambdas & procs
+# def batman_ironman_proc
+#   victor = proc { return "Batman will win!" }
+#   # or victor = Proc.new { return "Batman will win!" }
+#   victor.call
+#   "Iron Man will win!"
+# end
+#
+# puts batman_ironman_proc # puts batman since procs do not return to caller
+#
+# def batman_ironman_lambda
+#   victor = lambda { return "Batman will win!" }
+#   # or victor = -> { return "Batman will win!" }
+#   victor.call
+#   "Iron Man will win!"
+# end
+#
+# puts batman_ironman_lambda # puts batman since lambdas return to caller
+
 # # server setup 4 web app
 # # new things that are shown in tutorials should be added for all languages
 # # revision every week
@@ -130,3 +173,18 @@
 # my_array.each {|val| val += 1}
 # puts my_array # same as if i had my_array.collect or my_array.map
 
+# # check hash alternate form
+# crew = {
+#   captain: "Picard",
+#   first_officer: "Riker",
+#   lt_cdr: "Data",
+#   lt: "Worf",
+#   ensign: "Ro",
+#   counselor: "Troi",
+#   chief_engineer: "LaForge",
+#   doctor: "Crusher"
+# }
+#
+# puts "team captain is: #{crew[:captain]}"
+# puts "keys are:"
+# crew.each {|key, val| puts key}
