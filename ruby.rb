@@ -7,7 +7,7 @@
 	# παρατηρώ ότι το string έχει αλλάξει κ εκτός μεθόδου
 	# αν καταχωρήσω κάτι καινούριο στη μεταβλητή που δείχνει στο string εντός συνάρτησης τότε το string δεν μεταβάλλεται διότι
 
-# # κλάσεις + κληρονομικότητα + how to create an object
+# # κλάσεις + κληρονομικότητα + how to create an object + πολλαπλή κληρονομικότητα;
 
 # # callbacks withOUT params IDIOMATIC
 # def callback
