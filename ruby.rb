@@ -1,4 +1,47 @@
 # # variables scope
+# class ScopeTester
+# 	$i_am_global = 5
+# 	@@i_am_class_var = 4
+#
+# 	def initialize(x)
+# 		@i_am_instance_var = x
+# 	end
+#
+# 	def instance_method
+# 		"hallo from instance"
+# 	end
+#
+# 	def get_instance_var
+# 		@i_am_instance_var
+# 	end
+#
+# 	def self.class_method
+# 		"hallo from all classes"
+# 	end
+#
+# 	def self.get_class_var
+# 		@@i_am_class_var
+# 	end
+# end
+#
+# puts "-global val's value is:"
+# puts "#{$i_am_global}"
+#
+# puts "-All ScopeTester after calling their class_method get:"
+# puts "#{ScopeTester.class_method}"
+#
+# puts "-All ScopeTester after accesing their class var get:"
+# puts "#{ScopeTester.get_class_var}"
+#
+# # puts "All ScopeTester after calling their instance_method get:"
+# # puts "#{ScopeTester.instance_method}" # returns error
+#
+# tester = ScopeTester.new('haha')
+# puts "-This instance has instance var:"
+# puts "#{tester.get_instance_var}"
+#
+# # puts "-This instance has class var:"
+# # puts "#{tester.get_class_var}" # returns error
 
 # # methods params
 	# ftiaxnw ena object τύπου string
@@ -7,7 +50,28 @@
 	# παρατηρώ ότι το string έχει αλλάξει κ εκτός μεθόδου
 	# αν καταχωρήσω κάτι καινούριο στη μεταβλητή που δείχνει στο string εντός συνάρτησης τότε το string δεν μεταβάλλεται διότι
 
-# # κλάσεις + κληρονομικότητα + how to create an object + πολλαπλή κληρονομικότητα;
+# # classes
+# class Creature
+#   def initialize(name)
+#     @name = name
+#   end
+#
+#   def fight
+#     return "Punch to the chops!"
+#   end
+# end
+#
+# # Add your code below!
+#
+# class Dragon < Creature # only one super class allowed
+#     def fight
+# 		puts "Instead of breathing fire..."
+# 		super
+#     end
+# end
+#
+# max = Dragon.new("max")
+# puts max.fight
 
 # # callbacks withOUT params IDIOMATIC
 # def callback
@@ -94,6 +158,7 @@
 #
 # puts batman_ironman_lambda # puts batman since lambdas return to caller
 
+# # error handling
 # # server setup 4 web app
 # # new things that are shown in tutorials should be added for all languages
 # # revision every week
@@ -188,3 +253,14 @@
 # puts "team captain is: #{crew[:captain]}"
 # puts "keys are:"
 # crew.each {|key, val| puts key}
+
+# # loop to dynamic number of times to find prime numbers
+# def prime?(x)
+# 	return false if x==1
+#
+# 	2.upto(x-1).each { |n|
+# 		return false if x%n==0
+# 	}
+#
+# 	true
+# end
